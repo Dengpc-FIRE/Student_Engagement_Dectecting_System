@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="static/js/echarts.min.js"></script>
+  <title>学生参与度分析系统</title>
+  <!-- base:css -->
+
+  <link rel="stylesheet" href="static/css/typicons.css">
+  <link rel="stylesheet" href="static/css/my-card-style.css">
+
+
+  <link rel="stylesheet" href="static/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <link rel="stylesheet" href="static/css/select2.min.css">
+  <link rel="stylesheet" href="static/css/select2-bootstrap.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="static/css/style.css">
+  <!-- endinject -->
+
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+          <a class="navbar-brand brand-logo" href="/"><img src="static/picture/logo.svg" alt="logo"></a>
+          <a class="navbar-brand brand-logo-mini" href="/"><img src="static/picture/logo-mini.svg" alt="logo"></a>
+          <button class="navbar-toggler navbar-toggler align-self-center d-none d-lg-flex" type="button" data-toggle="minimize">
+            <span class="typcn typcn-th-menu"></span>
+          </button>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+          <ul class="navbar-nav mr-lg-2">
+            <li class="nav-item  d-none d-lg-flex">
+              <a class="nav-link active" href="#">
+                学生参与度分析系统
+              </a>
+            </li>
+          </ul>
+
+
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item d-none d-lg-flex  mr-2">
+              <a class="nav-link" href="#">
+                帮助
+              </a>
+            </li>
+
+            <li class="nav-item nav-profile dropdown">
+              <a class="nav-link dropdown-toggle  pl-0 pr-0" href="#" data-toggle="dropdown" id="profileDropdown">
+                <i class="typcn typcn-user-outline mr-0"></i>
+                <span class="nav-profile-name">安恒宇</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                <a class="dropdown-item">
+                <i class="typcn typcn-cog text-primary"></i>
+                个人信息
+                </a>
+                <a class="dropdown-item">
+                <i class="typcn typcn-power text-primary"></i>
+                退出
+                </a>
+              </div>
+            </li>
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="typcn typcn-th-menu"></span>
+          </button>
+        </div>
+      </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_settings-panel.html -->
+      <div class="theme-setting-wrapper">
+          <div id="settings-trigger"><i class="typcn typcn-cog-outline"></i></div>
+          <div id="theme-settings" class="settings-panel">
+            <i class="settings-close typcn typcn-delete-outline"></i>
+            <p class="settings-heading">模式</p>
+            <div class="sidebar-bg-options" id="sidebar-light-theme">
+              <div class="img-ss rounded-circle bg-light border mr-3"></div>
+              Light
+            </div>
+            <div class="sidebar-bg-options selected" id="sidebar-dark-theme">
+              <div class="img-ss rounded-circle bg-dark border mr-3"></div>
+              Dark
+            </div>
+            <p class="settings-heading mt-2">导航栏色彩</p>
+            <div class="color-tiles mx-0 px-4">
+              <div class="tiles success"></div>
+              <div class="tiles warning"></div>
+              <div class="tiles danger"></div>
+              <div class="tiles primary"></div>
+              <div class="tiles info"></div>
+              <div class="tiles dark"></div>
+              <div class="tiles default border"></div>
+            </div>
+          </div>
+        </div>
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <div class="d-flex sidebar-profile">
+              <div class="sidebar-profile-image">
+                <img src="https://cdn.luogu.com.cn/upload/image_hosting/ha2lbnfe.png" alt="image">
+
+                <span class="sidebar-status-indicator"></span>
+              </div>
+              <div class="sidebar-profile-name">
+                <p class="sidebar-name">
+                  安恒宇  老师
+                </p>
+                <p class="sidebar-designation">
+                  Welcome
+                </p>
+
+              </div>
+            </div>
+
+
+          </li>
+          <li class="nav-item">
+            <!--这里根据重定向写一下新的页面-->
+            <a class="nav-link" href="">
+              <i class="typcn typcn-device-desktop menu-icon"></i>
+              <span class="menu-title">首页 </span>
+
+            </a>
+          </li>
+          <li class="nav-item">
+            <!--这里根据重定向写一下新的页面-->
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <i class="typcn typcn-briefcase menu-icon"></i>
+              <span class="menu-title">历史数据</span>
+              <i class="typcn typcn-chevron-right menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <!--这里根据重定向写一下新的页面-->
+                <li class="nav-item"> <a class="nav-link" href="/button">2022年上半学年</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/feb">2022年下半学年</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/Mar">2023年上半学年</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+              <i class="typcn typcn-film menu-icon"></i>
+              <span class="menu-title">班级管理</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="form-elements">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="/class1">一班</a></li>
+                <li class="nav-item"><a class="nav-link" href="/class2">二班</a></li>
+                <li class="nav-item"><a class="nav-link" href="/class3">三班</a></li>
+                <li class="nav-item"><a class="nav-link" href="/class4">四班</a></li>
+              </ul>
+            </div>
+          </li>
+
+        <!--</ul>
+        说点什么以及日历
+        <ul class="sidebar-legend">
+          <li>
+            <p class="sidebar-menu-title">Category</p>
+          </li>
+          <li class="nav-item"><a href="#" class="nav-link">#Sales</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">#Marketing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">#Growth</a></li>
+        </ul>-->
+          <!--<div id="calendar">
+          <iframe src="https://www.example.com/calendar?your-params" style="border: 0" width="250" height="250" frameborder="0" scrolling="no"></iframe>
+          </div>-->
+
+      </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+
+            <div class="row">
+              <div class="col-sm-6">
+
+               <p style="font-size: 20px;">计算机科学与技术2021级2班</p>
+
+               </div>
+              <div class="container">
+                <div id="dynamicTitle" style="width:800px;height:50px;"></div>
+              </div>
+              <!--<script>
+                var chartDom = document.getElementById('dynamicTitle');
+                var myChart = echarts.init(chartDom);
+                var option;
+
+                option = {
+                  graphic: {
+                    elements: [
+                      {
+                        type: 'text',
+                        left: 'center',
+                        top: 'center',
+                        style: {
+                          text: '班级课堂参与度分析系统',
+                          fontSize: 35,
+                          fontWeight: 'bold',
+                          lineDash: [0, 200],
+                          lineDashOffset: 0,
+                          fill: 'transparent',
+                          stroke: '#000',
+                          lineWidth: 1
+                        },
+                        keyframeAnimation: {
+                          duration: 10000,
+                          loop: false,
+                          keyframes: [
+                            {
+                              percent: 0.7,
+                              style: {
+                                fill: 'transparent',
+                                lineDashOffset: 10,
+                                lineDash: [200, 0]
+                              }
+                            },
+                            {
+                              // Stop for a while.
+                              percent: 0.8,
+                              style: {
+                                fill: 'transparent'
+                              }
+                            },
+                            {
+                              percent: 1,
+                              style: {
+                                fill: 'black'
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                };
+
+                option && myChart.setOption(option);
+              </script>-
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center justify-content-md-end">
+                  <div class="pr-1 mb-3 mr-2 mb-xl-0">
+                  </div>
+                  <div class="pr-1 mb-3 mb-xl-0">
+                  </div>
+                </div>
+              </div>-->
+            </div>
+            <!--第一行图-->
+            <div class="row  mt-35">
+
+
+              <!------------------------------1------------------------------->
+              <div class="col-xl-4 d-flex grid-margin stretch-card">
+                <div class="card my-card-style">
+                  <div class="card-body">
+                    <div class="d-flex flex-wrap justify-content-between">
+                      <h4 class="card-title mb-3">班级整体状况</h4>
+                    </div>
+                    <section class="counts section-bg">
+                <div class="container">
+                  <div id="cakechart" style="width:300px;height:350px;"></div>
+                </div>
+              </section>
+              <script type="text/javascript">
+
+              var chartDom = document.getElementById('cakechart');
+              var myChart = echarts.init(chartDom);
+              var option;
+
+              option = {
+                tooltip: {
+                  trigger: 'item'
+                },
+                legend: {
+                  top: '5%',
+                  left: 'center'
+                },
+                series: [
+                  {
+                    name: 'Access From',
+                    type: 'pie',
+                    radius: ['40%', '70%'],
+                    avoidLabelOverlap: false,
+                    itemStyle: {
+                      borderRadius: 10,
+                      borderColor: '#fff',
+                      borderWidth: 2
+                    },
+                    label: {
+                      show: false,
+                      position: 'center'
+                    },
+                    emphasis: {
+                      label: {
+                        show: true,
+                        fontSize: 40,
+                        fontWeight: 'bold'
+                      }
+                    },
+                    labelLine: {
+                      show: false
+                    },
+                    data: [
+                      { value: 12, name: '高度专注' },
+                      { value: 15, name: '中度专注' },
+                      { value: 10, name: '低度专注' },
+                      { value: 5, name: '未检测' },
+                      { value: 3, name: '请假' }
+                    ]
+                  }
+                ]
+              };
+
+              option && myChart.setOption(option);
+
+              </script>
+
+                  </div>
+                </div>
+              </div>
+
+
+              <!------------------------------2------------------------------->
+              <div class="col-xl-4 d-flex grid-margin stretch-card">
+                <div class="card my-card-style">
+                  <div class="card-body">
+                    <div class="d-flex flex-wrap justify-content-between">
+                      <h4 class="card-title mb-3">学生专注度情况</h4>
+                    </div>
+                    <section class="counts section-bg">
+                <div class="container">
+                  <div id="barchartt" style="width:250px;height:300px;"></div>
+                </div>
+              </section>
+              <script type="text/javascript">
+                var chartDom = document.getElementById('barchartt');
+                var myChart = echarts.init(chartDom);
+                var option;
+
+                option = {
+                  tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                      // Use axis to trigger tooltip
+                      type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+                    }
+                  },
+                  legend: {},
+                  grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                  },
+                  xAxis: {
+                    type: 'value'
+                  },
+                  yAxis: {
+                    type: 'category',
+                    data: ['学生1','学生2','学生3','学生4','学生5','学生6','学生7']
+                  },
+                  series: [
+                    {
+                      name: '专注',
+                      type: 'bar',
+                      stack: 'total',
+                      label: {
+                        show: true
+                      },
+                      emphasis: {
+                        focus: 'series'
+                      },
+                      itemStyle: {
+                       color: '#91CC75',
+                       borderRadius: 3
+                       },
+                      data: {{engaged_data|tojson}}
+                    },
+                    {
+                      name: '散漫',
+                      type: 'bar',
+                      stack: 'total',
+                      label: {
+                        show: true
+                      },
+                      emphasis: {
+                        focus: 'series'
+                      },
+                      itemStyle: { // 设置红色
+                      color: '#EE6666',
+                      borderRadius: 3
+                       },
+                      data: {{unengaged_data|tojson}}
+                    }
+                  ]
+                };
+
+                option && myChart.setOption(option);
+
+              </script>
+
+                  </div>
+                </div>
+              </div>
+
+
+              <!------------------------------3------------------------------->
+              <div class="col-xl-4 d-flex grid-margin stretch-card">
+                <div class="card my-card-style">
+                  <div class="card-body">
+                    <div class="d-flex flex-wrap justify-content-between">
+                      <h4 class="card-title mb-3">学生标兵</h4>
+                    </div>
+                    <img width="125px" height="300px" alt="image" class="profile-pic", id="student-pic">
+                    <script>
+                      var url = "static/picture/" + "{{best_student.studentname}}" + ".jpg"
+                      document.getElementById("student-pic").src = url;
+                    </script>
+                    <div class="col-sm-35">
+                      <div class="d-flex justify-content-between mb-3">
+                        <div class="profile-text">姓名： </div>
+                        <div class="text-muted profile-text">{{best_student.studentname}}</div>
+                      </div>
+                      <div class="d-flex justify-content-between mb-3">
+                        <div class="profile-text">学号：</div>
+                        <div class="text-muted profile-text">{{best_student.studentid}}</div>
+                      </div>
+                      <div class="d-flex justify-content-between mb-3">
+                        <div class="profile-text">参与度分数：</div>
+                        <div class="text-muted profile-text">{{best_student.engagement_score * 100}}</div>
+                      </div>
+                      <!--<div class="d-flex justify-content-between mb-4">
+                        <div class="profile-text">该学生为当前班级中参与度最高者</div>
+                      </div>-->
+                    </div>
+                    <style>
+                      .profile-pic {
+                        float: left;
+                        margin-right: 5px;
+                      }
+
+                      .profile-text {
+                        float: left;
+                        line-height: 40px;
+                        font-family: '华文中宋', ‘Consolas’ , sans-serif;
+                        font-size: 14px;
+                      }
+
+
+                      .card-title {
+                        font-size: 1.5rem;
+                        margin-bottom: 0.5rem;
+                      }
+                    </style>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+             <!--第二行图-->
+            <div class="row mt-1">
+
+              <div class="col-xl-4 d-flex grid-margin stretch-card">
+                <div class="card my-card-style">
+                  <div class="card-body">
+                    <div class="d-flex flex-wrap justify-content-between">
+                      <!--<h4 class="card-title mb-3">特别关注模块</h4>-->
+                    </div>
+                    <section class="counts section-bg">
+                <div class="container">
+                  <div id="chert" style="width:300px;height:350px;"></div>
+                </div>
+
+              </section>
+              <script type="text/javascript">
+              var ROOT_PATH = 'https://echarts.apache.org/examples';
+
+              var chartDom = document.getElementById('chert');
+              var myChart = echarts.init(chartDom);
+              var option;
+
+              const weatherIcons = {
+                Sunny: ROOT_PATH + '',
+                Cloudy: ROOT_PATH + '',
+                Showers: ROOT_PATH + ''
+              };
+              const seriesLabel = {
+                show: true
+              };
+              option = {
+                title: {
+                  text: '特别关注学生'
+                },
+                tooltip: {
+                  trigger: 'axis',
+                  axisPointer: {
+                    type: 'shadow'
+                  }
+                },
+                legend: {
+                  data: ['高度专注', '一般专注', '低度专注']
+                },
+                grid: {
+                  left: 55
+                },
+                toolbox: {
+                  show: true,
+                  feature: {
+                    saveAsImage: {}
+                  }
+                },
+                xAxis: {
+                  type: 'value',
+                  name: 'T',
+                  axisLabel: {
+                    formatter: '{value}'
+                  }
+                },
+                yAxis: {
+                  type: 'category',
+                  inverse: true,
+                  data: ['学生一', '学生二', '学生三'],
+                  axisLabel: {
+                    formatter: function (value) {
+                      return  value ;
+                    },
+                    margin: 20,
+                    rich: {
+                      value: {
+                        lineHeight: 30,
+                        align: 'center'
+                      },
+                      Sunny: {
+                        height: 40,
+                        align: 'center',
+                        backgroundColor: {
+                          image: weatherIcons.Sunny
+                        }
+                      },
+                      Cloudy: {
+                        height: 40,
+                        align: 'center',
+                        backgroundColor: {
+                          image: weatherIcons.Cloudy
+                        }
+                      },
+                      Showers: {
+                        height: 40,
+                        align: 'center',
+                        backgroundColor: {
+                          image: weatherIcons.Showers
+                        }
+                      }
+                    }
+                  }
+                },
+                series: [
+                  {
+                    name: '高度专注时间',
+                    type: 'bar',
+                    data: [25, 20, 19],
+                    label: seriesLabel,
+                    markPoint: {
+                      symbolSize: 1,
+                      symbolOffset: [0, '50%'],
+                      label: {
+                        formatter: '{a|{a}\n}{b|{b} }{c|{c}}',
+                        backgroundColor: 'rgb(242,242,242)',
+                        borderColor: '#aaa',
+                        borderWidth: 1,
+                        borderRadius: 4,
+                        padding: [4, 10],
+                        lineHeight: 26,
+                        // shadowBlur: 5,
+                        // shadowColor: '#000',
+                        // shadowOffsetX: 0,
+                        // shadowOffsetY: 1,
+                        position: 'right',
+                        distance: 20,
+                        rich: {
+                          a: {
+                            align: 'center',
+                            color: '#fff',
+                            fontSize: 18,
+                            textShadowBlur: 2,
+                            textShadowColor: '#000',
+                            textShadowOffsetX: 0,
+                            textShadowOffsetY: 1,
+                            textBorderColor: '#333',
+                            textBorderWidth: 2
+                          },
+                          b: {
+                            color: '#333'
+                          },
+                          c: {
+                            color: '#ff8811',
+                            textBorderColor: '#000',
+                            textBorderWidth: 1,
+                            fontSize: 22
+                          }
+                        }
+                      },
+                      data: [
+                        { type: 'max', name: '最长 时间: ' },
+                        { type: 'min', name: '最短 时间: ' }
+                      ]
+                    }
+                  },
+                  {
+                    name: '一般专注时间',
+                    type: 'bar',
+                    label: seriesLabel,
+                    data: [34,40, 45]
+                  },
+                  {
+                    name: '低度专注时间',
+                    type: 'bar',
+                    label: seriesLabel,
+                    data: [90, 85, 89]
+                  }
+                ]
+              };
+
+              option && myChart.setOption(option);
+
+
+              </script>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-4 d-flex grid-margin stretch-card">
+                <div class="card my-card-style">
+                  <div class="card-body">
+                    <div class="d-flex flex-wrap justify-content-between">
+                      <h4 class="card-title mb-3">不同专注度人数随时间变化</h4>
+                    </div>
+                    <section class="counts section-bg">
+                <div class="container">
+                  <div id="barchartt1" style="width:250px;height:325px;"></div>
+                </div>
+              </section>
+              <script type="text/javascript">
+                var chartDom = document.getElementById('barchartt1');
+                var myChart = echarts.init(chartDom);
+                var option;
+
+                option = {
+                  tooltip: {
+                    trigger: 'axis'
+                  },
+                  legend: {
+                    data: ['高专注度', '中专注度', '低度专注', '散漫', '请假']
+                  },
+                  grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                  },
+                  toolbox: {
+                    feature: {
+                      saveAsImage: {}
+                    }
+                  },
+                  xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['10分钟', '15分钟', '20分钟', '25分钟', '30分钟', '35分钟', '40分钟']
+                  },
+                  yAxis: {
+                    type: 'value'
+                  },
+                  series: [
+                    {
+                      name: '高度专注',
+                      type: 'line',
+                      data: [15, 16, 13, 12, 10, 9, 8]
+                    },
+                    {
+                      name: '中度专注',
+                      type: 'line',
+                      data: [15, 16, 18, 18, 17, 18, 20]
+
+                    },
+                    {
+                      name: '低度专注',
+                      type: 'line',
+                      data: [6, 5, 5, 6, 7, 8, 8]
+                    },
+                    {
+                      name: '散漫',
+                      type: 'line',
+                      data: [3, 2, 3, 2, 4, 3, 2]
+                    },
+                    {
+                      name: '请假',
+                      type: 'line',
+                      data: [1, 1, 1, 2, 2, 2, 2]
+
+                    }
+                  ]
+                };
+
+                option && myChart.setOption(option);
+
+              </script>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-4 d-flex grid-margin stretch-card">
+                <div class="card my-card-style">
+                  <div class="card-body">
+                    <div class="d-flex flex-wrap justify-content-between">
+                      <!--<h4 class="card-title mb-3">各小组在线人数</h4>-->
+
+                    </div>
+                    <section class="counts section-bg">
+                <div class="container">
+                  <div id="barchart" style="width:300px;height:400px;"></div>
+                </div>
+              </section>
+              <script type="text/javascript">
+                var chartDom = document.getElementById('barchart');
+                var myChart = echarts.init(chartDom);
+                var option;
+
+                option = {
+                         title: {
+                              text: '各小组在线人数',
+                              top: '10px' // 调整距离
+                          },
+                  xAxis: {
+                    type: 'category',
+                    data: ['1组', '2组', '3组', '4组', '5组']
+                  },
+                  yAxis: {
+                    type: 'value'
+                  },
+                  series: [
+                    {
+                      data: [8, 7, 8, 9, 7],
+                      type: 'bar',
+                      showBackground: true,
+                      backgroundStyle: {
+                        color: 'rgba(180, 180, 180, 0.2)'
+                      }
+                    }
+                  ]
+                };
+                option && myChart.setOption(option);
+
+              </script>
+
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-center text-sm-left d-block d-sm-inline-block">Copyright &copy; 2023.Shandong University of Science and Technology All rights reserved.<a target="_blank"></a>
+
+              </span>
+
+            </div>
+          </footer>
+
+        </div>
+      </div>
+    </div>
+    <!-- container-scroller -->
+    <!-- base:js -->
+    <script src="static/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    scrip
+    <script src="static/js/off-canvas.js"></script>
+    <script src="static/js/hoverable-collapse.js"></script>
+    <script src="static/js/template.js"></script>
+    <script src="static/js/settings.js"></script>
+    <script src="static/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- plugin js for this page -->
+    <script src="static/js/progressbar.min.js"></script>
+    <script src="static/js/Chart.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- Custom js for this page-->
+    <script src="static/js/dashboard.js"></script>
+    <!-- End custom js for this page-->
+  </body>
+</html>

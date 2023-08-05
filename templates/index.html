@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="static/js/echarts.min.js"></script>
+    <title>Privacy-Protected Classroom Participation Analysis System: Teacher end</title>
+    <!-- base:css -->
+    <link rel="stylesheet" href="static/css/typicons.css">
+    <link rel="stylesheet" href="static/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- endinject -->
+
+  </head>
+  <body>
+    <div class="row" id="proBanner">
+      <div class="col-12">
+      </div>
+    </div>
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+          <a class="navbar-brand brand-logo" href=""><img src="static/picture/logo.svg" alt="logo"></a>
+          <a class="navbar-brand brand-logo-mini" href=""><img src="static/picture/logo-mini.svg" alt="logo"></a>
+          <button class="navbar-toggler navbar-toggler align-self-center d-none d-lg-flex" type="button" data-toggle="minimize">
+            <span class="typcn typcn-th-menu"></span>
+          </button>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+          <ul class="navbar-nav mr-lg-2">
+            <li class="nav-item  d-none d-lg-flex">
+            </li>
+            <li class="nav-item  d-none d-lg-flex">
+              <a class="nav-link active" href="#">
+                课堂数据
+              </a>
+            </li>
+            <li class="nav-item  d-none d-lg-flex">
+            </li>
+          </ul>
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item d-none d-lg-flex  mr-2">
+            </li>
+            </li>
+            <li class="nav-item nav-profile dropdown">
+              <a class="nav-link dropdown-toggle  pl-0 pr-0" href="#" data-toggle="dropdown" id="profileDropdown">
+                <i class="typcn typcn-user-outline mr-0"></i>
+                <span class="nav-profile-name">安恒宇</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                <a class="dropdown-item">
+                <i class="typcn typcn-cog text-primary"></i>
+                Settings
+                </a>
+                <a class="dropdown-item">
+                <i class="typcn typcn-power text-primary"></i>
+                Logout
+                </a>
+              </div>
+            </li>
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="typcn typcn-th-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_settings-panel.html -->
+        <div class="theme-setting-wrapper">
+          <div id="settings-trigger"><i class="typcn typcn-cog-outline"></i></div>
+          <div id="theme-settings" class="settings-panel">
+            <i class="settings-close typcn typcn-delete-outline"></i>
+            <p class="settings-heading">SIDEBAR SKINS</p>
+            <div class="sidebar-bg-options" id="sidebar-light-theme">
+              <div class="img-ss rounded-circle bg-light border mr-3"></div>
+              Light
+            </div>
+            <div class="sidebar-bg-options selected" id="sidebar-dark-theme">
+              <div class="img-ss rounded-circle bg-dark border mr-3"></div>
+              Dark
+            </div>
+            <p class="settings-heading mt-2">HEADER SKINS</p>
+            <div class="color-tiles mx-0 px-4">
+              <div class="tiles success"></div>
+              <div class="tiles warning"></div>
+              <div class="tiles danger"></div>
+              <div class="tiles primary"></div>
+              <div class="tiles info"></div>
+              <div class="tiles dark"></div>
+              <div class="tiles default border"></div>
+            </div>
+          </div>
+        </div>
+        <!-- partial -->
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <div class="d-flex sidebar-profile">
+              <div class="sidebar-profile-image">
+                <span class="sidebar-status-indicator"></span>
+              </div>
+              <div class="sidebar-profile-name">
+                <p class="sidebar-name">
+                  安恒宇
+                </p>
+                <p class="sidebar-designation">
+                  Welcome
+                </p>
+              </div>
+            </div>
+            <p class="sidebar-menu-title">班级课堂参与度分析系统</p>
+          </li>
+          <!--
+          <li class="nav-item">
+            <a class="nav-link" href="">
+              <i class="typcn typcn-device-desktop menu-icon"></i>
+              <span class="menu-title">Dashboard <span class="badge badge-primary ml-3">New</span></span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <i class="typcn typcn-briefcase menu-icon"></i>
+              <span class="menu-title">UI Elements</span>
+              <i class="typcn typcn-chevron-right menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="buttons.html">Buttons</a></li>
+                <li class="nav-item"> <a class="nav-link" href="dropdowns.html">Dropdowns</a></li>
+                <li class="nav-item"> <a class="nav-link" href="typography.html">Typography</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+              <i class="typcn typcn-film menu-icon"></i>
+              <span class="menu-title">Form elements</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="form-elements">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="basic_elements.html">Basic Elements</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+              <i class="typcn typcn-chart-pie-outline menu-icon"></i>
+              <span class="menu-title">Charts</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="charts">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="chartjs.html">ChartJs</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="typcn typcn-th-small-outline menu-icon"></i>
+              <span class="menu-title">Tables</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="basic-table.html">Basic table</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+              <i class="typcn typcn-compass menu-icon"></i>
+              <span class="menu-title">Icons</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="mdi.html">Mdi icons</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="typcn typcn-user-add-outline menu-icon"></i>
+              <span class="menu-title">User Pages</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="login.html"> Login </a></li>
+                <li class="nav-item"> <a class="nav-link" href="register.html"> Register </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
+              <i class="typcn typcn-globe-outline menu-icon"></i>
+              <span class="menu-title">Error pages</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="error">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="error-404.html"> 404 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="error-500.html"> 500 </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="documentation.html">
+              <i class="typcn typcn-document-text menu-icon"></i>
+              <span class="menu-title">Documentation</span>
+            </a>
+          </li>
+          -->
+        </ul>
+        <ul class="sidebar-legend">
+          <li>
+            <p class="sidebar-menu-title">下面可以写点东西</p>
+          </li>
+          <li class="nav-item"><a href="#" class="nav-link">说点什么1</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">说点什么2</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">说点什么3</a></li>
+        </ul>
+      </nav>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-sm-6">
+                <h3 class="mb-0 font-weight-bold">安恒宇 老师</h3>
+                <p>当前上课的班级是: 计算机科学与技术2021级2班</p>
+              </div>
+              <div class="container">
+                <div id="dynamicTitle" style="width:800px;height:50px;"></div>
+              </div>
+              <script>
+                var chartDom = document.getElementById('dynamicTitle');
+                var myChart = echarts.init(chartDom);
+                var option;
+
+                option = {
+                  graphic: {
+                    elements: [
+                      {
+                        type: 'text',
+                        left: 'center',
+                        top: 'center',
+                        style: {
+                          text: '班级课堂参与度分析系统',
+                          fontSize: 35,
+                          fontWeight: 'bold',
+                          lineDash: [0, 200],
+                          lineDashOffset: 0,
+                          fill: 'transparent',
+                          stroke: '#000',
+                          lineWidth: 1
+                        },
+                        keyframeAnimation: {
+                          duration: 10000,
+                          loop: false,
+                          keyframes: [
+                            {
+                              percent: 0.7,
+                              style: {
+                                fill: 'transparent',
+                                lineDashOffset: 10,
+                                lineDash: [200, 0]
+                              }
+                            },
+                            {
+                              // Stop for a while.
+                              percent: 0.8,
+                              style: {
+                                fill: 'transparent'
+                              }
+                            },
+                            {
+                              percent: 1,
+                              style: {
+                                fill: 'black'
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                };
+
+                option && myChart.setOption(option);
+              </script>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center justify-content-md-end">
+                  <div class="pr-1 mb-3 mr-2 mb-xl-0">
+                  </div>
+                  <div class="pr-1 mb-3 mb-xl-0">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row  mt-3">
+              <div class="col-xl-4 d-flex grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex flex-wrap justify-content-between">
+                      <h4 class="card-title mb-3">学生参与度数据汇总</h4>
+                    </div>
+                    <section class="counts section-bg">
+                <div class="container">
+                  <div id="barchart" style="width:450px;height:400px;"></div>
+                </div>
+              </section>
+              <script type="text/javascript">
+                var chartDom = document.getElementById('barchart');
+                var myChart = echarts.init(chartDom);
+                var option;
+
+                option = {
+                  tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                      // Use axis to trigger tooltip
+                      type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+                    }
+                  },
+                  legend: {},
+                  grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                  },
+                  xAxis: {
+                    type: 'value'
+                  },
+                  yAxis: {
+                    type: 'category',
+                    data: ['Student1','Student2','Student3','Student4','Student5','Student6','Student7']
+                  },
+                  series: [
+                    {
+                      name: 'Engaged',
+                      type: 'bar',
+                      stack: 'total',
+                      label: {
+                        show: true
+                      },
+                      emphasis: {
+                        focus: 'series'
+                      },
+                      itemStyle: {
+                       color: '#91CC75',
+                       borderRadius: 3
+                       },
+                      data: {{engaged_data|tojson}}
+                    },
+                    {
+                      name: 'Unengaged',
+                      type: 'bar',
+                      stack: 'total',
+                      label: {
+                        show: true
+                      },
+                      emphasis: {
+                        focus: 'series'
+                      },
+                      itemStyle: { // 设置红色
+                      color: '#EE6666',
+                      borderRadius: 3
+                       },
+                      data: {{unengaged_data|tojson}}
+                    }
+                  ]
+                };
+
+                option && myChart.setOption(option);
+
+              </script>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-5 d-flex grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex flex-wrap justify-content-between">
+                      <h4 class="card-title mb-3">学生标兵</h4>
+                    </div>
+                    <img width="250px" height="375px" alt="image" class="profile-pic", id="student-pic">
+                    <script>
+                      var url = "static/picture/" + "{{best_student.studentname}}" + ".jpg"
+                      document.getElementById("student-pic").src = url;
+                    </script>
+                    <div class="col-sm-12">
+                      <div class="d-flex justify-content-between mb-4">
+                        <div class="profile-text">学生姓名： </div>
+                        <div class="text-muted profile-text">{{best_student.studentname}}</div>
+                      </div>
+                      <div class="d-flex justify-content-between mb-4">
+                        <div class="profile-text">学号：</div>
+                        <div class="text-muted profile-text">{{best_student.studentid}}</div>
+                      </div>
+                      <div class="d-flex justify-content-between mb-4">
+                        <div class="profile-text">参与度分数：</div>
+                        <div class="text-muted profile-text">{{best_student.engagement_score * 100}}</div>
+                      </div>
+                      <div class="d-flex justify-content-between mb-4">
+                        <div class="profile-text">该学生为当前班级中参与度最高者</div>
+                      </div>
+                    </div>
+                    <style>
+                      .profile-pic {
+                        float: left;
+                        margin-right: 10px;
+                      }
+
+                      .profile-text {
+                        float: left;
+                        line-height: 60px;
+                        font-family: '华文中宋', ‘Consolas’ , sans-serif;
+                        font-size: 20px;
+                      }
+                    </style>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-3 d-flex grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex flex-wrap justify-content-between">
+                      <h4 class="card-title mb-3">班级参与度分布</h4>
+                    </div>
+                    <div class="container">
+                      <div id="main" style="width:330px;height:400px;"></div>
+                    </div>
+                    <script type="text/javascript">
+                       var chartDom = document.getElementById('main');
+                        var myChart = echarts.init(chartDom);
+                        var option;
+
+                        option = {
+                          tooltip: {
+                            trigger: 'item'
+                          },
+                          legend: {
+                            top: '5%',
+                            left: 'center'
+                          },
+                          series: [
+                            {
+                              name: 'Access From',
+                              type: 'pie',
+                              radius: ['40%', '70%'],
+                              avoidLabelOverlap: false,
+                              itemStyle: {
+                                borderRadius: 10,
+                                borderColor: '#fff',
+                                borderWidth: 2
+                              },
+                              label: {
+                                show: false,
+                                position: 'center'
+                              },
+                              emphasis: {
+                                label: {
+                                  show: true,
+                                  fontSize: 40,
+                                  fontWeight: 'bold'
+                                }
+                              },
+                              labelLine: {
+                                show: false
+                              },
+                              data: [
+                                { value: {{engaged_num}}, name: '高参与度',itemStyle:{color:'#91CC75'} },
+                                { value: {{unengaged_num}}, name: '低参与度', itemStyle:{color:'#EE6666'} }
+                              ]
+                            }
+                          ]
+                        };
+
+                        option && myChart.setOption(option);
+                    </script>
+                    <div class="d-flex justify-content-between mb-4">
+                              <div>高参与度人数</div>
+                              <div class="text-muted">4人</div>
+                            </div>
+                    <div class="progress progress-md mt-4">
+                              <div class="progress-bar bg-success" role="progressbar" style="width: 57%" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xl-7 d-flex grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex flex-wrap justify-content-between">
+                    </div>
+                    <div class="container">
+                  <div id="linechart" style="width:900px;height:500px;"></div>
+                </div>
+              <script type="text/javascript">
+                var chartDom = document.getElementById('linechart');
+                var myChart = echarts.init(chartDom);
+                var option;
+
+                var xAxisData = [];
+                var data1 = [];
+                var data2 = [];
+                for (var i = 0; i < 100; i++) {
+                  xAxisData.push('A' + i);
+                  data1.push(Math.max(0, (Math.sin(i / 5) * (i / 5 - 10) + i / 6) * 5));
+                  data2.push(Math.max(0, (Math.cos(i / 5) * (i / 5 - 10) + i / 6) * 5));
+                }
+                option = {
+                  title: {
+                    text: '班级参与度变化'
+                  },
+                  legend: {
+                    data: ['bar', 'bar2']
+                  },
+
+                  tooltip: {},
+                  xAxis: {
+                    data: xAxisData,
+                    splitLine: {
+                      show: false
+                    },
+                    axisLabel:{
+                      show:false
+                    }
+                  },
+                  yAxis: {},
+                  series: [
+                    {
+                      name: 'bar',
+                      type: 'bar',
+                      data: data1,
+                      emphasis: {
+                        focus: 'series'
+                      },
+                      animationDelay: function (idx) {
+                        return idx * 10;
+                      }
+                    },
+                    {
+                      name: 'bar2',
+                      type: 'bar',
+                      data: data2,
+                      emphasis: {
+                        focus: 'series'
+                      },
+                      animationDelay: function (idx) {
+                        return idx * 10 + 100;
+                      }
+                    }
+                  ],
+                  animationEasing: 'elasticOut',
+                  animationDelayUpdate: function (idx) {
+                    return idx * 5;
+                  }
+                };
+
+                option && myChart.setOption(option);
+              </script>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-5 d-flex grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex flex-wrap justify-content-between">
+                      <h4 class="card-title mb-3">课堂时间（50min）</h4>
+                    </div>
+                    <div class="container">
+                      <div id="clock" style="width:530x;height:480px;"></div>
+                    </div>
+                    <script type="text/javascript">
+                      var chartDom = document.getElementById('clock');
+                      var myChart = echarts.init(chartDom);
+                      var option;
+
+                      option = {
+                        series: [
+                          {
+                            type: 'gauge',
+                            startAngle: 180,
+                            endAngle: 0,
+                            min: 0,
+                            max: 3000,
+                            splitNumber: 5,
+                            itemStyle: {
+                              color: '#00CC7E',
+                              shadowColor: 'rgba(0,138,255,0.45)',
+                              shadowBlur: 10,
+                              shadowOffsetX: 2,
+                              shadowOffsetY: 2
+                            },
+                            progress: {
+                              show: true,
+                              roundCap: true,
+                              width: 18
+                            },
+                            pointer: {
+                              icon: 'path://M2090.36389,615.30999 L2090.36389,615.30999 C2091.48372,615.30999 2092.40383,616.194028 2092.44859,617.312956 L2096.90698,728.755929 C2097.05155,732.369577 2094.2393,735.416212 2090.62566,735.56078 C2090.53845,735.564269 2090.45117,735.566014 2090.36389,735.566014 L2090.36389,735.566014 C2086.74736,735.566014 2083.81557,732.63423 2083.81557,729.017692 C2083.81557,728.930412 2083.81732,728.84314 2083.82081,728.755929 L2088.2792,617.312956 C2088.32396,616.194028 2089.24407,615.30999 2090.36389,615.30999 Z',
+                              length: '75%',
+                              width: 16,
+                              offsetCenter: [0, '5%']
+                            },
+                            axisLine: {
+                              roundCap: true,
+                              lineStyle: {
+                                width: 18
+                              }
+                            },
+                            axisTick: {
+                              splitNumber: 2,
+                              lineStyle: {
+                                width: 2,
+                                color: '#999'
+                              }
+                            },
+                            splitLine: {
+                              length: 12,
+                              lineStyle: {
+                                width: 3,
+                                color: '#999'
+                              }
+                            },
+                            axisLabel: {
+                              distance: 30,
+                              color: '#999',
+                              fontSize: 20
+                            },
+                            title: {
+                              show: false
+                            },
+                            detail: {
+                              backgroundColor: '#fff',
+                              borderColor: '#999',
+                              borderWidth: 2,
+                              width: '70%',
+                              lineHeight: 40,
+                              height: 50,
+                              borderRadius: 8,
+                              offsetCenter: [0, '35%'],
+                              valueAnimation: true,
+                              formatter: function (value) {
+                                return '{value|' + value.toFixed(0) + '}{unit|seconds}';
+                              },
+                              rich: {
+                                value: {
+                                  fontSize: 50,
+                                  fontWeight: 'bolder',
+                                  color: '#777'
+                                },
+                                unit: {
+                                  fontSize: 20,
+                                  color: '#777',
+                                  padding: [0, 0, -20, 10]
+                                }
+                              }
+                            },
+                            data: [
+                              {
+                                value: 0
+                              }
+                            ]
+                          }
+                        ]
+                      };
+                      function updateValue() {
+                        var newValue = option.series[0].data[0].value + 1;
+                        if (newValue > option.series[0].max) {
+                          newValue = option.series[0].min;
+                        }
+                        option.series[0].data[0].value = newValue;
+                        myChart.setOption(option);
+                        setTimeout(function () {
+                          updateValue();
+                        }, 1000);
+                      }
+                      updateValue();
+                      option && myChart.setOption(option);
+                    </script>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 d-flex grid-margin stretch-card">
+                <div class="card">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-center text-sm-left d-block d-sm-inline-block">Copyright &copy; 2023.Shandong University of Science and Technology All rights reserved.<a target="_blank"></a>
+
+              </span>
+
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- base:js -->
+    <script src="static/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    scrip
+    <script src="static/js/off-canvas.js"></script>
+    <script src="static/js/hoverable-collapse.js"></script>
+    <script src="static/js/template.js"></script>
+    <script src="static/js/settings.js"></script>
+    <script src="static/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- plugin js for this page -->
+    <script src="static/js/progressbar.min.js"></script>
+    <script src="static/js/Chart.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- Custom js for this page-->
+    <script src="static/js/dashboard.js"></script>
+    <!-- End custom js for this page-->
+  </body>
+</html>

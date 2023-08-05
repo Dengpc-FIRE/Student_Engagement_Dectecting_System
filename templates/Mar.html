@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="static/js/echarts.min.js"></script>
+  <title>学生参与度分析系统</title>
+  <!-- base:css -->
+
+  <link rel="stylesheet" href="static/css/typicons.css">
+  <link rel="stylesheet" href="static/css/my-card-style.css">
+
+  <link rel="stylesheet" href="static/css/my-greatcard-style.css">
+
+  <link rel="stylesheet" href="static/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <link rel="stylesheet" href="static/css/select2.min.css">
+  <link rel="stylesheet" href="static/css/select2-bootstrap.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="static/css/style.css">
+  <!-- endinject -->
+
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+          <a class="navbar-brand brand-logo" href="/"><img src="static/picture/logo.svg" alt="logo"></a>
+          <a class="navbar-brand brand-logo-mini" href="/"><img src="static/picture/logo-mini.svg" alt="logo"></a>
+          <button class="navbar-toggler navbar-toggler align-self-center d-none d-lg-flex" type="button" data-toggle="minimize">
+            <span class="typcn typcn-th-menu"></span>
+          </button>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+          <ul class="navbar-nav mr-lg-2">
+            <li class="nav-item  d-none d-lg-flex">
+              <a class="nav-link active" href="#">
+                2023年上半学年
+              </a>
+            </li>
+          </ul>
+
+
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item d-none d-lg-flex  mr-2">
+              <a class="nav-link" href="#">
+                帮助
+              </a>
+            </li>
+
+            <li class="nav-item nav-profile dropdown">
+              <a class="nav-link dropdown-toggle  pl-0 pr-0" href="#" data-toggle="dropdown" id="profileDropdown">
+                <i class="typcn typcn-user-outline mr-0"></i>
+                <span class="nav-profile-name">安恒宇</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                <a class="dropdown-item">
+                <i class="typcn typcn-cog text-primary"></i>
+                个人信息
+                </a>
+                <a class="dropdown-item">
+                <i class="typcn typcn-power text-primary"></i>
+                退出
+                </a>
+              </div>
+            </li>
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="typcn typcn-th-menu"></span>
+          </button>
+        </div>
+      </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_settings-panel.html -->
+      <div class="theme-setting-wrapper">
+          <div id="settings-trigger"><i class="typcn typcn-cog-outline"></i></div>
+          <div id="theme-settings" class="settings-panel">
+            <i class="settings-close typcn typcn-delete-outline"></i>
+            <p class="settings-heading">模式</p>
+            <div class="sidebar-bg-options" id="sidebar-light-theme">
+              <div class="img-ss rounded-circle bg-light border mr-3"></div>
+              Light
+            </div>
+            <div class="sidebar-bg-options selected" id="sidebar-dark-theme">
+              <div class="img-ss rounded-circle bg-dark border mr-3"></div>
+              Dark
+            </div>
+            <p class="settings-heading mt-2">导航栏色彩</p>
+            <div class="color-tiles mx-0 px-4">
+              <div class="tiles success"></div>
+              <div class="tiles warning"></div>
+              <div class="tiles danger"></div>
+              <div class="tiles primary"></div>
+              <div class="tiles info"></div>
+              <div class="tiles dark"></div>
+              <div class="tiles default border"></div>
+            </div>
+          </div>
+        </div>
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <div class="d-flex sidebar-profile">
+              <div class="sidebar-profile-image">
+                <img src="https://cdn.luogu.com.cn/upload/image_hosting/ha2lbnfe.png" alt="image">
+
+                <span class="sidebar-status-indicator"></span>
+              </div>
+              <div class="sidebar-profile-name">
+                <p class="sidebar-name">
+                  安恒宇  老师
+                </p>
+                <p class="sidebar-designation">
+                  Welcome
+                </p>
+
+              </div>
+            </div>
+
+
+          </li>
+          <li class="nav-item">
+            <!--这里根据重定向写一下新的页面-->
+            <a class="nav-link" href="/">
+              <i class="typcn typcn-device-desktop menu-icon"></i>
+              <span class="menu-title">首页 </span>
+
+            </a>
+          </li>
+          <li class="nav-item">
+            <!--这里根据重定向写一下新的页面-->
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <i class="typcn typcn-briefcase menu-icon"></i>
+              <span class="menu-title">历史数据</span>
+              <i class="typcn typcn-chevron-right menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <!--这里根据重定向写一下新的页面-->
+                <li class="nav-item"> <a class="nav-link" href="/button">2022年上半学年</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/feb">2022年下半学年</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/Mar">2023年上半学年</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+              <i class="typcn typcn-film menu-icon"></i>
+              <span class="menu-title">班级管理</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="form-elements">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="/class1">一班</a></li>
+                <li class="nav-item"><a class="nav-link" href="/class2">二班</a></li>
+                <li class="nav-item"><a class="nav-link" href="/class3">三班</a></li>
+                <li class="nav-item"><a class="nav-link" href="/class4">四班</a></li>
+              </ul>
+            </div>
+          </li>
+
+        <!--</ul>
+        说点什么以及日历
+        <ul class="sidebar-legend">
+          <li>
+            <p class="sidebar-menu-title">Category</p>
+          </li>
+          <li class="nav-item"><a href="#" class="nav-link">#Sales</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">#Marketing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">#Growth</a></li>
+        </ul>-->
+          <!--<div id="calendar">
+          <iframe src="https://www.example.com/calendar?your-params" style="border: 0" width="250" height="250" frameborder="0" scrolling="no"></iframe>
+          </div>-->
+
+      </nav>
+
+
+      <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+
+
+            <div class="row  mt-1">
+
+              <div class="col-xl-12 d-flex grid-margin stretch-card">
+                <div class="card my-greatcard-style">
+                  <div class="card-body">
+                    <div class="d-flex flex-wrap justify-content-between">
+                      <h4 class="card-title mb-3">班级平均专注度--不同班级--不同时间</h4>
+                    </div>
+                    <section class="counts section-bg">
+                <div class="container">
+                  <div id="cake1chart" style="width:1200px;height:600px;"></div>
+                </div>
+              </section>
+              <script type="text/javascript">
+
+              var chartDom = document.getElementById('cake1chart');
+              var myChart = echarts.init(chartDom);
+              var option;
+
+              option = {
+                legend: {},
+                tooltip: {
+                  trigger: 'axis',
+                  showContent: false
+                },
+                dataset: {
+                  source: [
+                    ['product', '1月', '2月', '3月', '4月', '5月', '6月'],
+                    ['1班', 66.5, 72.1, 88.7, 60.1, 53.4, 75.1],
+                    ['2班', 81.1, 51.4, 75.1, 53.3, 73.8, 58.7],
+                    ['3班', 75.1, 52.2, 89.5, 56.4, 90.2, 65.5],
+                    ['4班', 50.2, 60.1, 70.2, 75.2, 60.9, 80.1]
+                  ]
+                },
+                xAxis: { type: 'category' },
+                yAxis: { gridIndex: 0 },
+                grid: { top: '55%' },
+                series: [
+                  {
+                    type: 'line',
+                    smooth: true,
+                    seriesLayoutBy: 'row',
+                    emphasis: { focus: 'series' }
+                  },
+                  {
+                    type: 'line',
+                    smooth: true,
+                    seriesLayoutBy: 'row',
+                    emphasis: { focus: 'series' }
+                  },
+                  {
+                    type: 'line',
+                    smooth: true,
+                    seriesLayoutBy: 'row',
+                    emphasis: { focus: 'series' }
+                  },
+                  {
+                    type: 'line',
+                    smooth: true,
+                    seriesLayoutBy: 'row',
+                    emphasis: { focus: 'series' }
+                  },
+                  {
+                    type: 'pie',
+                    id: 'pie',
+                    radius: '30%',
+                    center: ['50%', '25%'],
+                    emphasis: {
+                      focus: 'self'
+                    },
+                    label: {
+                      formatter: '{b}: {@2012} ({d}%)'
+                    },
+                    encode: {
+                      itemName: 'product',
+                      value: '2012',
+                      tooltip: '2012'
+                    }
+                  }
+                ]
+              };
+              myChart.on('updateAxisPointer', function (event) {
+                const xAxisInfo = event.axesInfo[0];
+                if (xAxisInfo) {
+                  const dimension = xAxisInfo.value + 1;
+                  myChart.setOption({
+                    series: {
+                      id: 'pie',
+                      label: {
+                        formatter: '{b}: {@[' + dimension + ']} ({d}%)'
+                      },
+                      encode: {
+                        value: dimension,
+                        tooltip: dimension
+                      }
+                    }
+                  });
+                }
+              });
+
+              option && myChart.setOption(option);
+
+              </script>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+
+
+          </div>
+
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-center text-sm-left d-block d-sm-inline-block">Copyright &copy; 2023.Shandong University of Science and Technology All rights reserved.<a target="_blank"></a>
+
+              </span>
+
+            </div>
+          </footer>
+
+        </div>
+      </div>
+    </div>
+    <!-- container-scroller -->
+    <!-- base:js -->
+    <script src="static/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    scrip
+    <script src="static/js/off-canvas.js"></script>
+    <script src="static/js/hoverable-collapse.js"></script>
+    <script src="static/js/template.js"></script>
+    <script src="static/js/settings.js"></script>
+    <script src="static/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- plugin js for this page -->
+    <script src="static/js/progressbar.min.js"></script>
+    <script src="static/js/Chart.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- Custom js for this page-->
+    <script src="static/js/dashboard.js"></script>
+    <!-- End custom js for this page-->
+  </body>
+</html>

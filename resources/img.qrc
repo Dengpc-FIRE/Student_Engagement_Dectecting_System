@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="img">
+    <file>background.jpg</file>
+    <file>close.png</file>
+    <file>maximize.png</file>
+    <file>minimize.png</file>
+  </qresource>
+    <qresource prefix="pi">
+    <file>3.jpg</file>
+    <file>4.jpg</file>
+  </qresource>
+</RCC>
